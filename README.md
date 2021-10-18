@@ -139,7 +139,7 @@ The cluster is now accessible at kubernetes:8443 inside argocd container (kubern
 
 Once a cluster added, you should see it added successfully in the argocd UI.  See below an example of multiple clusters added, both remote accessible, and remote tunnelled:
 
-![argocd multiple-external-clusters](https://imgur.com/m5PqTkl)
+![argocd multiple-external-clusters](https://imgur.com/m5PqTkl.png)
 
 **Thank you very much.
 If you want to improve this solution, you are free to contribute.**
