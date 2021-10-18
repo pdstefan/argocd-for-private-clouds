@@ -1,0 +1,27 @@
+spec:
+  template:
+    spec:
+      hostAliases:
+      - ip: 127.0.0.1  # we add alias kubernetes to localhost since the tls for kubernetes server is only for kubernetes named domains, https://kubernetes:[tunnelled-port]
+        hostnames:     # it wouldn't work to try to connect to a cluster on https://127.0.0.1:[tunnelled-port]
+        - kubernetes
+      containers:
+      - name: multi-autossh
+        image: <your-built-multi-autossh-image-here>:0.0.1
+        env:
+        - name: TUNNEL_PARAMETERS_CM                 # we pass the config
+          value: /etc/autossh_targets/targets_file
+        volumeMounts:
+        - mountPath: /etc/autossh_targets
+          name: cm-tunnels
+        - mountPath: /etc/cluster_keys
+          name: ssh-key
+      volumes:
+      - name: cm-tunnels
+        configMap:
+          defaultMode: 420
+          name: cluster-tunnels
+      - name: ssh-key
+        secret:
+          defaultMode: 420
+          secretName: multi-autossh-keys     # if you have multiple keys, add them in this secret
