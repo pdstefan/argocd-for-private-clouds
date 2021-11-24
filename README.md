@@ -39,9 +39,9 @@ An example of such file is below, change it to your needs:
 ```
 # LOCAL PORT | TARGET HOST | TARGET PORT | REMOTE HOST | REMOTE PORT | SSH_KEY_PATH
 # ---------------------------------------------------------------------------------
-6443 10.21.4.64 5443 user@80.158.6.76 22 /etc/cluster_keys/ssh-privatekey_1     
-7443 10.21.5.232 5443 user@80.158.6.208 22 /etc/cluster_keys/ssh-privatekey_2 
-8443 192.168.0.83 5443 user@80.158.6.215 22 /etc/cluster_keys/ssh-privatekey_3
+6443 10.21.4.64 5443 user@80.158.XX.XY 22 /etc/cluster_keys/ssh-privatekey_1     
+7443 10.21.5.232 5443 user@80.158.XX.XYY 22 /etc/cluster_keys/ssh-privatekey_2 
+8443 192.168.0.83 5443 user@80.158.YY.XXX 22 /etc/cluster_keys/ssh-privatekey_3
 #----------------------------------------------------------------------------------
 ```
 
